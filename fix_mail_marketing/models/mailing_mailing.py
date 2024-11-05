@@ -37,7 +37,7 @@ class MailingMailing(models.Model):
                 active_ids=res_ids
             ).create(composer_values)
 
-            composer.send_mail()
+            composer.action_send_mail()
             mailing.write({'state': 'done', 'sent_date': fields.Datetime.now()})
     # def action_launch(self):
     #     self.write({'schedule_type': 'now'})
